@@ -17,13 +17,49 @@ namespace BinarySearchTree
 
         public void AddToTree(T value)
         {
-            Node<T> NodeNow = Top;
             Node<T> NodeLocation = new Node<T>(value);
-            bool setLocation = true;
+            int currentNode;
+            Node<T> NodeNow = Top, parent = null;
+            while (NodeNow!= null)
+            {
+                currentNode = NodeLocation.value.CompareTo(NodeNow.value);
+                if (currentNode == 0)
+                {
+                    return;
+                }
+                else if (currentNode > 0)
+                {
+                    parent = NodeNow;
+                    NodeNow = NodeNow.leftChild;
+                }
+                else if (currentNode < 0)
+                {
+                    parent = NodeNow;
+                    NodeNow = NodeNow.rightChild;
+                }
 
+            }
+            if (parent == null)
+            {
+                Top = NodeLocation;              
+            }
+            else
+            {
+                currentNode = NodeLocation.value.CompareTo(parent.value);
+                if (currentNode > 0)
+                {
+                    parent.leftChild = NodeLocation;
+                }
+                else
+                {
+                    parent.rightChild = NodeLocation;
+                }
+                
+            }
         }
     }
-
 }
+
+
 
 
