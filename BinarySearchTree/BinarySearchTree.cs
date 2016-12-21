@@ -51,7 +51,27 @@ namespace BinarySearchTree
                     parent.RightChild = NodeLocation;
                 }
             }
-
+        }
+        public bool SearchTree(T value)
+        {
+            int result;
+            Node<T> NodeNow = Top;
+            Node<T> NodeLocation = new Node<T>(value);
+            while (NodeNow != null)
+            {
+                result = NodeNow.value.CompareTo(NodeLocation.value);
+                if (result == 0)
+                    return true;
+                else if (result > 0)
+                {
+                    NodeNow = NodeNow.LeftChild;
+                }
+                else if (result < 0)
+                {
+                    NodeNow = NodeNow.RightChild;
+                }
+            }            
+            return false;
         }
     }
 }

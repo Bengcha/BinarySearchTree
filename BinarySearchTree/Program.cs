@@ -17,8 +17,7 @@ namespace BinarySearchTree
             BST.AddToTree(15);
             BST.AddToTree(55);
             BST.AddToTree(75);
-
-            Console.WriteLine("");
+            BST.SearchTree(100);
             Console.ReadKey();
 
 
