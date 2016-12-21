@@ -8,54 +8,50 @@ namespace BinarySearchTree
 {
     class BinarySearchTree<T> where T : IComparable
     {
-        Node<T> Top;
-
+        Node<T> Top;      
         public BinarySearchTree(T value)
         {
             Top = new Node<T>(value);
         }
-
         public void AddToTree(T value)
         {
+            int result;
             Node<T> NodeLocation = new Node<T>(value);
-            int currentNode;
             Node<T> NodeNow = Top, parent = null;
-            while (NodeNow!= null)
+            while (NodeNow != null)
             {
-                currentNode = NodeLocation.value.CompareTo(NodeNow.value);
-                if (currentNode == 0)
-                {
+                result = NodeNow.value.CompareTo(NodeLocation.value);
+                if (result == 0)
                     return;
-                }
-                else if (currentNode > 0)
+                else if (result > 0)
                 {
                     parent = NodeNow;
-                    NodeNow = NodeNow.leftChild;
+                    NodeNow = NodeNow.LeftChild;
                 }
-                else if (currentNode < 0)
+                else if (result < 0)
                 {
                     parent = NodeNow;
-                    NodeNow = NodeNow.rightChild;
+                    NodeNow = NodeNow.RightChild;
                 }
-
             }
             if (parent == null)
             {
-                Top = NodeLocation;              
+                NodeNow = NodeLocation;
             }
             else
             {
-                currentNode = NodeLocation.value.CompareTo(parent.value);
-                if (currentNode > 0)
+                result = parent.value.CompareTo(NodeLocation.value);
+                if (result > 0)
                 {
-                    parent.leftChild = NodeLocation;
+                    parent.
+                        LeftChild = NodeLocation;
                 }
                 else
                 {
-                    parent.rightChild = NodeLocation;
+                    parent.RightChild = NodeLocation;
                 }
-                
             }
+
         }
     }
 }

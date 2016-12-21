@@ -9,10 +9,10 @@ namespace BinarySearchTree
     public class Node<T> where T : IComparable
     {
         public T value;
-        public Node<T> parent;
-        public Node<T> rightChild;
-        public Node<T> leftChild;
-
+        private Node<T> rightChild;
+        private Node<T> leftChild;
+        public Node<T> RightChild { get; set; }
+        public Node<T> LeftChild { get; set; }
         public Node(T value)
         {
             this.value = value;
