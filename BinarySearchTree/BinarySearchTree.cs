@@ -73,24 +73,6 @@ namespace BinarySearchTree
             }            
             return false;
         }
-        //public bool RemoveNode(T value)
-        //{
-        //    Node<T> NodeNow = Top, parent = null;
-        //    int result = NodeNow.Value.CompareTo(value);
-        //    while (result != 0)
-        //    {
-        //        return false;
-        //    }
-        //    else if (Top != null)
-        //    {
-        //        SearchTree(value);
-        //        if (NodeLocation == null)
-        //        {
-                    
-        //        }
-        //    }
-
-        //}
     }
 }
 
