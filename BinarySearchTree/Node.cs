@@ -8,14 +8,15 @@ namespace BinarySearchTree
 {
     public class Node<T> where T : IComparable
     {
-        public T value;
+        private T value;
         private Node<T> rightChild;
         private Node<T> leftChild;
+        public T Value { get; set; }
         public Node<T> RightChild { get; set; }
         public Node<T> LeftChild { get; set; }
         public Node(T value)
         {
-            this.value = value;
+            this.Value = value;
         }
             
 
